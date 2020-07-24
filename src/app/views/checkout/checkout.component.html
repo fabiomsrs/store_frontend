@@ -1,0 +1,82 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" style="margin-top: 20px;" >    
+    <!-- <div fexFlex="10"></div> -->
+    <mat-card class="mat-card-product">
+    <form class="example-form" [formGroup]="form">
+            <h3><b>Personal Information</b></h3>
+            <p>
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" 
+                        name="firstName">                    
+                </mat-form-field>                        
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" 
+                        name="lastName">                    
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" style="width: 500px;">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" 
+                        name="email"
+                        placeholder="Ex. pat@example.com">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address" 
+                        name="address">                    
+                </mat-form-field>                        
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput formControlName="postalCode" 
+                        name="postalCode">                    
+                </mat-form-field>
+            </p>
+            <mat-divider></mat-divider>
+            <!-- Payment Details -->
+            <h3 style="margin-top: 20px; margin-bottom: 30px;"><b>Payment Details</b></h3>            
+            <p>
+                <mat-form-field appearance="outline" style="width: 500px;">
+                    <mat-label>Credit Card Number</mat-label>
+                    <input matInput formControlName="cardNumber" 
+                        name="cardNumber">
+                    <div mat-icon-button matSuffix>
+                        <mat-icon>visibility</mat-icon>
+                    </div>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>Security Number</mat-label>
+                    <input matInput type="password" formControlName="securityCode" 
+                        name="securityCode">                    
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="input-inline-width">
+                    <mat-label>Expiration Dante</mat-label>
+                    <input matInput formControlName="expirationDate" 
+                        name="expirationDate"
+                        placeholder="MM/YYYY">                    
+                </mat-form-field>                                        
+            </p>            
+            <button mat-button (click)="transaction()" style="width: 500px; margin: 4px; background-color: #f0f0f0;" color="primary">Register</button>            
+        </form>
+    </mat-card>
+    <!-- <div fexFlex="20"></div> -->
+    <mat-card style="background-color: #f5f5f5; margin-top: 10px;">
+        <mat-card-header>          
+            <mat-card-title>Subtotal ({{countProduct()}})</mat-card-title>
+            <mat-card-subtitle>value: R$ {{totalValue()}}</mat-card-subtitle>
+        </mat-card-header>        
+        <mat-card-content>
+          <p>
+            
+          </p>
+        </mat-card-content>
+        <mat-card-actions>          
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" > 
+    <mat-list fxFlex="40">
+        <div mat-subheader>Products</div>
+        <mat-list-item *ngFor="let product of dataSource" style="margin-top: 5%;">
+            <div mat-line><h2>{{product.name}}</h2></div>
+            <div mat-line> Quantity: {{product.actual_quantity || 1}} </div>
+            <div mat-line> 
+              Value: R$ {{product.value}} 
+              <button mat-icon-button (click)="removeProductCart(product)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <mat-divider></mat-divider>        
+            </div>
+        </mat-list-item>
+    </mat-list>  
+    <mat-card fxFlex style="background-color: #f5f5f5; margin-top: 10px;">
+        <mat-card-header>          
+          <mat-card-title>Subtotal ({{countProduct()}})</mat-card-title>
+          <mat-card-subtitle>value: R$ {{totalValue()}}</mat-card-subtitle>
+        </mat-card-header>        
+        <mat-card-content>
+          <p>
+            
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="proceedCheckout()" fxFlex style="background-color: #f0f0f0;">Proceed to checkout</button>          
+        </mat-card-actions>
+    </mat-card>
+    <div fxFlex="40"></div> 
+</div>

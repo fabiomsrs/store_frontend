@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;"> 
+    <ng-container *ngFor="let product of products" style="margin: 0.5%;">
+        <mat-card class="mat-card-product" fxFlex="0 1 calc(25% - 11px)"
+        fxFlex.lt-md="0 1 calc(50% - 11px)"
+        fxFlex.lt-sm="100%">                
+        <mat-card-title class="mat-card-title-product">
+            <div class="row">
+                <p>
+                    <span style="font-size:1rem; margin-top: 10px;" fxFlex="70">{{product.name}}</span>
+                    <span fxFlex></span>
+                    <button mat-icon-button (click)="addProductToCart(product)">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>   
+                </p>
+                <p>
+                    <span style="font-size:1rem; margin-top: 10px;" fxFlex="70">Quantity: {{product.quantity}}</span>
+                </p>
+                <p>
+                    <span style="font-size: 1.3rem;">
+                        R$ {{product.value}}
+                    </span>      
+                </p>
+            </div>          
+        </mat-card-title>  
+        <img class="mat-card-product-image" src="https://www.teknozeka.com/wp-content/uploads/2020/03/wp-header-logo-21.png" alt="Photo of a Shiba Inu">
+        </mat-card>
+    </ng-container >    
+</div>

@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.success-snackbar {
+    background: #28a745;
+}
+
+.error-snackbar {
+    background: #dc3545;
+}
+
+.warning-snackbar {
+    background: #ffc107;
+}
+
+.store_title {    
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 500;
+    font-stretch: normal;
+    text-decoration: none; 
+    color: black;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

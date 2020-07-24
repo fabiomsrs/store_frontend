@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px;">    
+    <mat-card class="mat-card-product" style="width: 400px;">
+    <form class="example-form" [formGroup]="form">
+            <p>
+                <mat-form-field appearance="outline" style="width: 400px;">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" 
+                        name="firstName">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" style="width: 400px;">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" 
+                        name="lastName">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" style="width: 400px;">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" 
+                        name="email"
+                        placeholder="Ex. pat@example.com">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                </mat-form-field>
+            </p>
+            <p>                
+                <mat-form-field appearance="outline" style="width: 400px;">
+                    <mat-label>Enter a password</mat-label>
+                    <input matInput formControlName="password" name="password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </p>
+            <button mat-button (click)="register()" style="width: 400px; margin-bottom: 4px; background-color: #f0f0f0;" color="primary">Register</button>
+            Don't have an account? <a routerLink="/user-register">Sign up</a>
+        </form>
+    </mat-card>
+</div>

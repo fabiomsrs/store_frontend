@@ -1,0 +1,18 @@
+<mat-toolbar>    
+    <mat-toolbar-row>  
+        <button mat-icon-button (click)="toogle()"><mat-icon>reorder</mat-icon></button>          
+        <a routerLink="/" style="text-decoration: none; color: black;">Store</a>
+        <span class="example-spacer"></span>         
+        <div *ngIf="login_condition; else elseBlock">
+            <a routerLink="/login" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">            
+                <mat-icon>login</mat-icon>
+            </a>
+        </div>
+        <ng-template #elseBlock>
+            Olá {{user.firstName}} 
+            <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">            
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </ng-template>        
+    </mat-toolbar-row>
+</mat-toolbar>

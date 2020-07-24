@@ -1,0 +1,25 @@
+<div *ngIf="!cofirmed_flag; else elseBlock" fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px;">    
+    <mat-list style="width: 400px;">
+        <div mat-subheader>Products</div>
+        <mat-list-item *ngFor="let product of payment.products">            
+            <div mat-line><h2>{{product.name}}</h2></div>
+            <div mat-line> Quantity: {{product.actual_quantity || 1}} </div>
+            <div mat-line> 
+                Value: R$ {{product.value}}               
+            </div>
+            <mat-divider></mat-divider>        
+        </mat-list-item>
+    </mat-list>    
+    <div>
+        <h4>Purchase Value: R$ {{totalValue()}}</h4>
+    </div>
+    <div *ngIf="paymentNotCofirmed()">        
+        <button mat-stroked-button color="primary" (click)="confirmPayment()">Confirm Payment</button>
+    </div>        
+    </div>
+
+<ng-template #elseBlock>
+    <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 20px;">
+        <h2>Your payment was successfully confirmed </h2>
+    </div>
+</ng-template>
