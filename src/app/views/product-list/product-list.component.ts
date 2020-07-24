@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[]
+  products: Product[] = []
   cartProducts$: Observable<any>;
 
   constructor(
@@ -28,10 +28,18 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts()    
   }
-    
+  
+  hasProducts(){
+    if(this.products.length > 0){
+      return true
+    }
+    return false
+  }
+
   async getProducts(){
     await this._productService.getProducts().subscribe(res => {
-      this.products = res.data.filter((item) => {return item.quantity > 0})            
+      this.products = res.data.filter((item) => {return item.quantity > 0})
+      console.log(this.products)
     })
   }
   

@@ -29,6 +29,7 @@ export class ProductRegisterComponent implements OnInit {
         this._productService.createProducts(this.form.value)
           .subscribe(
             res => {
+              console.log(res)
               this._snackBar.open("Register Successful","",{
                 duration: 3000,
                 panelClass: ['success-snackbar']

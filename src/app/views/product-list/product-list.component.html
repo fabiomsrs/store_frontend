@@ -1,4 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;"> 
+    <div *ngIf="!hasProducts()">
+        <p>No products available</p>
+    </div>
     <ng-container *ngFor="let product of products" style="margin: 0.5%;">
         <mat-card class="mat-card-product" fxFlex="0 1 calc(25% - 11px)"
         fxFlex.lt-md="0 1 calc(50% - 11px)"

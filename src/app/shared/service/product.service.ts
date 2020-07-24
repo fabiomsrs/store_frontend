@@ -31,7 +31,7 @@ export class ProductService {
       }
 
     public getProducts(): Observable<ProductPageResponse>{
-      return this.httpClient.get<ProductPageResponse>(this.apiUrl)
+      return this.httpClient.get<ProductPageResponse>(this.apiUrl+"?page=1&take=20")
     }
 
     public createProducts(product: any): Observable<any>{      
